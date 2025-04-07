@@ -1,0 +1,131 @@
+/* Form container and heading etc */
+#form-wrapper {
+
+    /* Root wrapper for bg color and form centering */
+    min-height: 100vh;
+    width: 100%;
+
+    background-color: #FBF8F6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    /* Taken from figma as dimension */
+    min-width: 517px;
+}
+
+#form-wrapper>h1 {
+    font-weight: 400;
+    margin-bottom: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form inputs in general */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* All but not checkboxes */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #D4D4D4;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Custom styles for the first name and last name inputs */
+.couple-inputs {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.couple-inputs>div {
+    width: 230px;
+}
+
+.couple-inputs label {
+    /* For preserving spacing styles (margin from lower input) */
+    display: inline-block;
+}
+
+/* Dropdown styles */
+select {
+    background-color: white;
+    width: 230px !important;
+}
+
+/* Checkbox styles */
+.checkbox-group {
+    display: flex;
+    gap: 145px;
+}
+
+.checkbox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-column label {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-column input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* Submit button */
+#submit-btn {
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+    padding: 15px;
+    border: none;
+    font-size: 13px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Error message styles, injected by JS */
+.error {
+    display: block;
+    color: #CC777B;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.error-input {
+    /* Taken from figma explicitly */
+    border: 1.5px solid rgba(234, 204, 201, 1) !important;
+    box-shadow: 2px 2px 5.1px 0px rgba(235, 205, 202, 1);
+
+}
+
+.error-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
