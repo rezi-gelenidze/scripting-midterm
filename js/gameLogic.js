@@ -44,6 +44,10 @@ function handleGuess() {
     attempts++;
     attemptsDisplay.textContent = attempts;
 
+    // Update score
+    score--;
+    scoreDisplay.textContent = score;
+    
     // Check if the guess is correct
     if (guess === secretNumber) {
         showFeedback("🎉 Correct!");
@@ -54,22 +58,17 @@ function handleGuess() {
     // Check if the user has spent all attempts
     if (attempts >= 10) {
         showFeedback("💥 Game Over!");
-        scoreDisplay.textContent = 0; // Set score to 0 as we return here
         guessInput.disabled = true;
         return;
     }
 
     // Provide feedback on the guess by comparison
-    const direction = guess < secretNumber ? "📉 Too low!" : "📈 Too high!";
-    showFeedback(direction);
-
-    // Update score
-    score--;
-    scoreDisplay.textContent = score;
+    const isTooHigh = guess > secretNumber;
+    showFeedback(direction = isTooHigh ? "📉 Too High!" : "📈 Too Low!");
 
     // Generate history entry
     const historyItem = document.createElement("li");
-    historyItem.innerHTML = `You guessed <span>${guess}</span> ( ${direction} )`;
+    historyItem.innerHTML = `You guessed <span>${guess}</span> ( ${isTooHigh ? "Too high" : "Too low"} )`;
 
     // Append history item to the history list
     historyList.appendChild(historyItem);

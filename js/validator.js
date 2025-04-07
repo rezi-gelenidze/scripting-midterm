@@ -32,6 +32,10 @@ document.getElementById("group-form").addEventListener("submit", function (e) {
     document.querySelectorAll(".error")
         .forEach(el => el.remove());
 
+    // Remove error class from inputs
+    document.querySelectorAll(".error-input")
+        .forEach(el => el.classList.remove("error-input"));
+
 
     // Validity flag
     let isValid = true;
